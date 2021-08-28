@@ -48,11 +48,11 @@ class UnreadGmailWatcherStack(core.Stack):
             self,
             'event-bridge',
             schedule = aws_events.Schedule.cron(
-                minute='30',
-                hour='*',
-                month='*',
-                year='*'
+                minute = '0',
+                hour = '*',
+                month = '*',
+                year = '*'
             )
         )
-        
+
         event_bridge.add_target(aws_events_targets.LambdaFunction(lambda_function))
